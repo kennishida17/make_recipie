@@ -1,0 +1,34 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <header>Chat GPT will think of your dish.</header>
+    </div>
+    <form action="/top/" method="post">
+        {% csrf_token %}
+        <div class="input_title">
+            <input type="text" name="title" placeholder="Dish">
+        </div>
+        <div class="submit">
+            <input type="submit" value="POST">
+        </div>
+    </form>
+    <div class="list">
+        {% for post in posts %}
+        <li>{{ post.title }}</li>
+        <p>{{ post.recipie }}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
+{% endblock %}
+
+
+
