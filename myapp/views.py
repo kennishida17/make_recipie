@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Dish
 from django.http import HttpResponseRedirect
 import openai
-openai.api_key = "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"
+openai.api_key = "API"
 
 def index(request):
     posts = Dish.objects.all().order_by('-created_at')[:1]
